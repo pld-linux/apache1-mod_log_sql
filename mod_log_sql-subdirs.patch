@@ -1,0 +1,28 @@
+remove targets for docs and contrib subdirs
+so the Makefiles can be removed early in %prep stage
+
+--- mod_log_sql-1.99/configure.ac~	2004-07-21 07:06:15.000000000 +0300
++++ mod_log_sql-1.99/configure.ac	2005-02-10 02:43:17.000000000 +0200
+@@ -66,10 +66,7 @@
+ 
+ dnl Write config.status and the Makefile
+ 
+-AC_OUTPUT(Makefile
+-docs/Makefile
+-contrib/Makefile)
+-
++AC_OUTPUT(Makefile)
+ 
+ AC_MSG_RESULT([------------------------------------])
+ AC_MSG_RESULT([Apache version  : $AP_VERSION])
+--- mod_log_sql-1.99/Makefile.in~	2004-07-28 21:08:33.000000000 +0300
++++ mod_log_sql-1.99/Makefile.in	2005-02-10 02:45:30.000000000 +0200
+@@ -1,7 +1,7 @@
+ # @configure_input@
+ 
+ # Modify these top variables.
+-SUBDIRS = docs contrib
++SUBDIRS = 
+ 
+ HEADERS = mod_log_sql.h \
+ 		functions.h \
