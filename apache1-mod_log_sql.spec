@@ -4,8 +4,9 @@
 Summary:	SQL logging module for Apache
 Summary(pl):	Modu³ logowania zapytañ do Apache do bazy SQL
 Name:		apache1-mod_%{mod_name}
+# NOTE: remember about apache-mod_log_sql when updating!
 Version:	1.99
-Release:	1
+Release:	2
 License:	Apache (?)
 Group:		Networking/Daemons
 Source0:	http://www.outoforder.cc/downloads/mod_log_sql/mod_%{mod_name}-%{version}.tar.gz
@@ -38,6 +39,9 @@ logowanie wszystkich zapytañ do bazy danych.
 %setup -q -n mod_%{mod_name}-%{version}
 
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
 %configure \
 	--with-apxs=%{apxs}
 %{__make}
