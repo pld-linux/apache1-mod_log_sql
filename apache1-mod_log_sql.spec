@@ -28,7 +28,7 @@ Requires:	apache1
 Obsoletes:	apache-mod_log_sql <= 1.13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_sysconfdir	/etc/apache
+%define		_sysconfdir	%(%{apxs} -q SYSCONFDIR)
 %define		_pkglibdir	%(%{apxs} -q LIBEXECDIR)
 
 %description
