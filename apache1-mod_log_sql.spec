@@ -10,7 +10,6 @@ License:	Apache (?)
 Group:		Networking/Daemons
 Source0:	http://www.outoforder.cc/downloads/mod_log_sql/mod_%{mod_name}-%{version}.tar.gz
 # Source0-md5:	e246a3d8e96d2d62715eb34f75c7c11d
-Source1:	apache1-log_mysql.conf
 URL:		http://www.outoforder.cc/projects/apache/mod_log_sql/
 BuildRequires:	%{apxs}
 BuildRequires:	apache1-devel >= 1.3.20
@@ -48,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_pkglibdir}}
 
 install *.so $RPM_BUILD_ROOT%{_pkglibdir}
-install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/%{name}.conf
+#install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/%{name}.conf
 
 rm docs/Makefile* docs/*.xml contrib/Makefile*
 
@@ -73,4 +72,4 @@ fi
 %defattr(644,root,root,755)
 %doc AUTHORS CHANGELOG TODO contrib docs LICENSE
 %attr(755,root,root) %{_pkglibdir}/*
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*.conf
+#%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*.conf
