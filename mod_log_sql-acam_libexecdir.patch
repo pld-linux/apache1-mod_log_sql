@@ -1,0 +1,11 @@
+--- aclocal.m4~	2004-08-30 18:54:46.766919920 +0200
++++ aclocal.m4	2004-08-30 18:57:30.655005144 +0200
+@@ -366,7 +366,7 @@
+ 
+ # Determine libdbi lib directory
+ if test -z $dbi_path; then
+-    test_paths="/usr/lib /usr/local/lib"
++    test_paths="$libdir /usr/lib /usr/local/lib"
+ else
+     test_paths="${dbi_path}/lib"
+ fi
