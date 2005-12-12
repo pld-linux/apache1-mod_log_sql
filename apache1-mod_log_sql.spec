@@ -32,12 +32,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_sysconfdir	%(%{apxs} -q SYSCONFDIR 2>/dev/null)
 
 %description
-mod_log_sql is a logging module for Apache 1.3 and 2.0 which logs all requests
-to a database.
+mod_log_sql is a logging module for Apache 1.3 and 2.0 which logs all
+requests to a database.
 
 %description -l pl
-mod_log_sql jest modu³em loguj±cym dla Apache 1.3 i 2.0, który pozwala na
-logowanie wszystkich zapytañ do bazy danych.
+mod_log_sql jest modu³em loguj±cym dla Apache 1.3 i 2.0, który pozwala
+na logowanie wszystkich zapytañ do bazy danych.
 
 %prep
 %setup -q -n mod_%{mod_name}-%{version}
@@ -87,5 +87,5 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS CHANGELOG TODO contrib docs LICENSE
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/conf.d/*_mod_%{mod_name}.conf
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/conf.d/*_mod_%{mod_name}.conf
 %attr(755,root,root) %{_pkglibdir}/*
