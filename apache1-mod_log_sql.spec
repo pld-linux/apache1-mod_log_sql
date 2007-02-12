@@ -3,7 +3,7 @@
 %define		mod_name	log_sql
 %define		apxs		/usr/sbin/apxs1
 Summary:	SQL logging module for Apache
-Summary(pl.UTF-8):   Moduł logowania zapytań do Apache do bazy SQL
+Summary(pl.UTF-8):	Moduł logowania zapytań do Apache do bazy SQL
 Name:		apache1-mod_%{mod_name}
 # NOTE: remember about apache-mod_log_sql when updating!
 Version:	1.99
