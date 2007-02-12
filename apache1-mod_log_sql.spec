@@ -3,7 +3,7 @@
 %define		mod_name	log_sql
 %define		apxs		/usr/sbin/apxs1
 Summary:	SQL logging module for Apache
-Summary(pl):	Modu≥ logowania zapytaÒ do Apache do bazy SQL
+Summary(pl.UTF-8):   Modu≈Ç logowania zapyta≈Ñ do Apache do bazy SQL
 Name:		apache1-mod_%{mod_name}
 # NOTE: remember about apache-mod_log_sql when updating!
 Version:	1.99
@@ -36,9 +36,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 mod_log_sql is a logging module for Apache 1.3 and 2.0 which logs all
 requests to a database.
 
-%description -l pl
-mod_log_sql jest modu≥em loguj±cym dla Apache 1.3 i 2.0, ktÛry pozwala
-na logowanie wszystkich zapytaÒ do bazy danych.
+%description -l pl.UTF-8
+mod_log_sql jest modu≈Çem logujƒÖcym dla Apache 1.3 i 2.0, kt√≥ry pozwala
+na logowanie wszystkich zapyta≈Ñ do bazy danych.
 
 %prep
 %setup -q -n mod_%{mod_name}-%{version}
