@@ -15,7 +15,7 @@ Source0:	http://www.outoforder.cc/downloads/mod_log_sql/mod_%{mod_name}-%{versio
 Patch0:		mod_%{mod_name}-acam_libexecdir.patch
 Patch1:		mod_%{mod_name}-subdirs.patch
 URL:		http://www.outoforder.cc/projects/apache/mod_log_sql/
-BuildRequires:	%{apxs}
+BuildRequires:	apache1-apxs
 BuildRequires:	apache1-devel >= 1.3.33-2
 BuildRequires:	apache1-mod_ssl-devel
 BuildRequires:	autoconf
