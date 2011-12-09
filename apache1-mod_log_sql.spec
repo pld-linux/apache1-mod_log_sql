@@ -29,7 +29,7 @@ Obsoletes:	apache-mod_log_sql <= 1.13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_pkglibdir	%(%{apxs} -q LIBEXECDIR 2>/dev/null)
-%define		_sysconfdir	%(%{apxs} -q SYSCONFDIR 2>/dev/null)
+%define		_sysconfdir	%(%{apxs} -q SYSCONFDIR 2>/dev/null)/conf.d
 
 %description
 mod_log_sql is a logging module for Apache 1.3 and 2.0 which logs all
@@ -56,12 +56,12 @@ rm -f docs/{Makefile*,*.xml} contrib/Makefile*
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_pkglibdir},%{_sysconfdir}/conf.d}
+install -d $RPM_BUILD_ROOT{%{_pkglibdir},%{_sysconfdir}}
 
 install *.so $RPM_BUILD_ROOT%{_pkglibdir}
 
 echo 'LoadModule %{mod_name}_module	modules/mod_%{mod_name}.so' > \
-	$RPM_BUILD_ROOT%{_sysconfdir}/conf.d/90_mod_%{mod_name}.conf
+	$RPM_BUILD_ROOT%{_sysconfdir}/90_mod_%{mod_name}.conf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -83,5 +83,5 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS CHANGELOG TODO contrib docs LICENSE
-%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/conf.d/*_mod_%{mod_name}.conf
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*_mod_%{mod_name}.conf
 %attr(755,root,root) %{_pkglibdir}/*
