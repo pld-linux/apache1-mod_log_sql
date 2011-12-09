@@ -1,0 +1,4 @@
+- release 5,
+- use new rpm automnation,
+- fixed path to registered config file for module in httpd.conf (thanks
+  Agnieszka).
