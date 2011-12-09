@@ -1,0 +1,1 @@
+- fixed huge bug (zeroing httpd.conf after deinstalation)
