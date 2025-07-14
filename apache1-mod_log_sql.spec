@@ -41,8 +41,8 @@ na logowanie wszystkich zapytań do bazy danych.
 
 %prep
 %setup -q -n mod_%{mod_name}-%{version}
-%patch0 -p0
-%patch1 -p1
+%patch -P0 -p0
+%patch -P1 -p1
 
 rm -f docs/{Makefile*,*.xml} contrib/Makefile*
 
